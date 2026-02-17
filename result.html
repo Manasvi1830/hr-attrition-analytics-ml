@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+
+    <h3>Risk Score: {{ risk_score }}%</h3>
+    <h3>Risk Category: {{ category }}</h3>
+
+    <h3>Recommendations:</h3>
+    <ul>
+        {% for rec in recommendations %}
+        <li>{{ rec }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Go Back</a>
+</body>
+</html>
