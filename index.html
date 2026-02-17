@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Attrition Prediction</title>
+</head>
+<body>
+    <h2>Employee Attrition Prediction System</h2>
+
+    <form action="/predict" method="post">
+        Age: <input type="number" name="Age"><br><br>
+        Monthly Income: <input type="number" name="MonthlyIncome"><br><br>
+        Years At Company: <input type="number" name="YearsAtCompany"><br><br>
+        Years Since Last Promotion: <input type="number" name="YearsSinceLastPromotion"><br><br>
+        Overtime (1=Yes, 0=No): <input type="number" name="Overtime"><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
