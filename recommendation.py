@@ -13,4 +13,7 @@ def generate_recommendations(input_data, risk_score):
     if risk_score > 60:
         suggestions.append("Immediate HR intervention required")
 
+    if not suggestions:
+        suggestions.append("Employee is stable. Maintain engagement programs.")
+
     return suggestions
