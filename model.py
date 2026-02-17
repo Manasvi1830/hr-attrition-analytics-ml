@@ -1,17 +1,11 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.metrics import classification_report
+from sklearn.preprocessing import StandardScaler
 import joblib
 
 def train_model():
     df = pd.read_csv("dataset/employee_data.csv")
-
-    # Encode categorical columns
-    le = LabelEncoder()
-    df["Department"] = le.fit_transform(df["Department"])
-    df["JobRole"] = le.fit_transform(df["JobRole"])
 
     X = df.drop("Attrition", axis=1)
     y = df["Attrition"]
@@ -25,8 +19,6 @@ def train_model():
 
     model = RandomForestClassifier(n_estimators=100)
     model.fit(X_train, y_train)
-
-    print(classification_report(y_test, model.predict(X_test)))
 
     joblib.dump(model, "model.pkl")
     joblib.dump(scaler, "scaler.pkl")
